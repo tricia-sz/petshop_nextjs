@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h2>Petshop</h2>
+      <h2 className="text-accent-blue">Petshop</h2>
     </div>
   );
 }
