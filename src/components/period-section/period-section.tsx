@@ -14,7 +14,7 @@ const periodIcons = {
 export const PeriodSection = ({ period }: PeriodSectionProps) => {
   return (
     <section className="mb-8 bg-background-tertiary rounded-xl">
-      <div className="flex items-center px-5 py-3 justify-between border-b border-[#2E2C30]">
+      <div className="flex items-center px-5 py-3 justify-between border-b border-[#2c2f30]">
         <div className="flex items-center gap-2">
           {periodIcons[period?.type]}
           <h2 className="text-label-large-size text-content-primary">
@@ -25,6 +25,23 @@ export const PeriodSection = ({ period }: PeriodSectionProps) => {
           {period.timeRange}
         </span>
       </div>
+
+      {period.appointments.length > 0 ? (
+        <div className="px-5">
+          <div>
+            <div className="grid grid-cols-2 md:hidden text-label-small-size text-content-secondary mb-2">
+              <div className="text-left">Horário</div>
+              <div className="text-right">Paciente</div>
+            </div>
+
+            {period.appointments.map((appointment, index) => (
+              <div key={index}>{appointment.petName}</div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <p>Nenhum agendamento para este período</p>
+      )}
     </section>
   );
 };
