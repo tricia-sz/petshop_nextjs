@@ -63,9 +63,11 @@ function groupAppointmentByPeriod(
   const morningAppointments = transformedAppointments.filter(
     (apt) => apt.period === 'morning'
   );
+
   const afternoonAppointments = transformedAppointments.filter(
     (apt) => apt.period === 'afternoon'
   );
+
   const eveningAppointments = transformedAppointments.filter(
     (apt) => apt.period === 'evening'
   );
